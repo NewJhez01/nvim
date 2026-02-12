@@ -42,4 +42,18 @@ return {
       { "<leader>xx", "<cmd>Trouble diagnostics toggle focus=true<CR>", desc = "Diagnostics list" },
     },
   },
+  {
+    "kdheepak/lazygit.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    cmd = {
+      "LazyGit",
+      "LazyGitCurrentFile",
+      "LazyGitFilter",
+      "LazyGitFilterCurrentFile",
+    },
+    keys = {
+      { "<leader>gg", "<cmd>LazyGit<CR>", desc = "LazyGit (repo)" },
+      { "<leader>gf", "<cmd>LazyGitCurrentFile<CR>", desc = "LazyGit (current file)" },
+    },
+  },
 }
