@@ -10,15 +10,18 @@ return {
       "neovim/nvim-lspconfig",
     },
     opts = {
-      ensure_installed = { "gopls", "rust_analyzer", "intelephense", "vtsls", "lua_ls" },
+      ensure_installed = {},
       automatic_enable = false,
     },
   },
   {
     "neovim/nvim-lspconfig",
     dependencies = { "hrsh7th/cmp-nvim-lsp" },
-    config = function()
-      local capabilities = require("cmp_nvim_lsp").default_capabilities()
+    opts = {
+      servers = {},
+    },
+    config = function(_, opts)
+      local lsp = require("config.lsp")
 
       vim.diagnostic.config({
         virtual_text = true,
@@ -27,40 +30,14 @@ return {
         severity_sort = true,
       })
 
-      vim.lsp.config("gopls", {
-        capabilities = capabilities,
-      })
+      for server, server_opts in pairs(opts.servers or {}) do
+        local merged = vim.tbl_deep_extend("force", {
+          capabilities = lsp.capabilities(),
+        }, server_opts or {})
 
-      vim.lsp.config("rust_analyzer", {
-        capabilities = capabilities,
-      })
-
-      vim.lsp.config("vtsls", {
-        capabilities = capabilities,
-      })
-
-      vim.lsp.config("intelephense", {
-        capabilities = capabilities,
-        init_options = {
-          licenceKey = os.getenv("INTELEPHENSE_LICENSE"),
-        },
-        settings = {
-          intelephense = {
-            environment = { phpVersion = "8.2" },
-            files = { maxSize = 5000000 },
-          },
-        },
-      })
-
-      vim.lsp.config("lua_ls", {
-        capabilities = capabilities,
-      })
-
-      vim.lsp.enable("gopls")
-      vim.lsp.enable("rust_analyzer")
-      vim.lsp.enable("vtsls")
-      vim.lsp.enable("intelephense")
-      vim.lsp.enable("lua_ls")
+        vim.lsp.config(server, merged)
+        vim.lsp.enable(server)
+      end
     end,
   },
 }

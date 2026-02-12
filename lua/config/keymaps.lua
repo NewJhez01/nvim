@@ -1,7 +1,7 @@
 local map = vim.keymap.set
 
 -- netrw
-map("n", "<leader>pv", vim.cmd.Ex, { desc = "Open netrw" })
+map("n", "<leader>vv", vim.cmd.Ex, { desc = "Open netrw" })
 
 -- Window navigation and splits
 map("n", "<leader>wh", "<C-w>h", { desc = "Window left" })
