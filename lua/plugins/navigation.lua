@@ -2,7 +2,29 @@ return {
   {
     "ibhagwan/fzf-lua",
     dependencies = { "nvim-tree/nvim-web-devicons" },
-    opts = {},
+    opts = {
+      ui_select = {
+        previewer = false,
+        winopts = {
+          width = 0.5,
+          height = 0.4,
+        },
+      },
+      lsp = {
+        code_actions = {
+          previewer = false,
+          winopts = {
+            width = 0.5,
+            height = 0.4,
+          },
+        },
+      },
+    },
+    config = function(_, opts)
+      local fzf = require("fzf-lua")
+      fzf.setup(opts)
+      fzf.register_ui_select(opts.ui_select)
+    end,
   },
   {
     "ThePrimeagen/harpoon",
@@ -10,7 +32,12 @@ return {
     dependencies = { "nvim-lua/plenary.nvim" },
     config = function()
       local harpoon = require("harpoon")
-      harpoon:setup()
+      harpoon:setup({
+        settings = {
+          save_on_toggle = true,
+          sync_on_ui_close = true,
+        },
+      })
 
       vim.keymap.set("n", "<leader>ha", function()
         harpoon:list():add()
