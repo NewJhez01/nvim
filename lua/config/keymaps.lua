@@ -7,6 +7,7 @@ map("n", "<leader>wk", "<C-w>k", { desc = "Window up" })
 map("n", "<leader>wl", "<C-w>l", { desc = "Window right" })
 map("n", "<leader>wv", "<C-w>v", { desc = "Split vertical" })
 map("n", "<leader>wd", "<C-w>c", { desc = "Delete window" })
+map("n", "<leader>qq", "<cmd>qa<CR>", { desc = "Quit Neovim" })
 
 map("n", "<leader>vv", vim.cmd.Ex, { desc = "Open netrw" })
 
