@@ -1,13 +1,10 @@
 return {
   "okuuva/auto-save.nvim",
-  version = "^1.0.0", -- see https://devhints.io/semver, alternatively use '*' to use the latest tagged release
-  cmd = "ASToggle", -- optional for lazy loading on command
-  event = { "InsertLeave", "TextChanged" }, -- optional for lazy loading on trigger events
+  version = "^1.0.0",
   opts = {
-    trigger_events = {
-      immediate_save = {},
-      defer_save = { "InsertLeave" },
-      cancel_deferred_save = {},
-    },
+    -- Use plugin defaults for trigger events:
+    -- immediate: BufLeave, FocusLost, QuitPre, VimSuspend
+    -- deferred: InsertLeave, TextChanged
+    -- cancel deferred: InsertEnter
   },
 }
