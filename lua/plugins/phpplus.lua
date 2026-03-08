@@ -8,7 +8,7 @@ return {
       { "<leader>nm", "<cmd>PhpTools Method<CR>", desc = "PHP: generate undefined method" },
     },
     opts = {
-      ui = { enable = true }, -- keep default UI
+      ui = { enable = false },
     },
     dependencies = {
       -- treesitter is required for PHP/JSON parsing
