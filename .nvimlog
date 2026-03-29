@@ -6,3 +6,7 @@ WRN 2026-03-11T17:30:35.236 ?.78712    server_start:199: Failed to start server:
 WRN 2026-03-11T17:30:35.269 ?.78712    server_start:199: Failed to start server: operation not permitted: /var/folders/0m/rz0c98v17ps80wd4x1plks480000gn/T/nvim.owen.harper-jones/8bkkwI/fzf-lua.1773246635.78712.1
 WRN 2026-03-11T17:31:09.287 ?.78783    server_start:199: Failed to start server: operation not permitted: /var/folders/0m/rz0c98v17ps80wd4x1plks480000gn/T/nvim.owen.harper-jones/crf621/nvim.78783.0
 WRN 2026-03-11T17:31:09.324 ?.78783    server_start:199: Failed to start server: operation not permitted: /var/folders/0m/rz0c98v17ps80wd4x1plks480000gn/T/nvim.owen.harper-jones/crf621/fzf-lua.1773246669.78783.1
+WRN 2026-03-18T11:51:02.471 ?.95940    server_start:199: Failed to start server: operation not permitted: /var/folders/0m/rz0c98v17ps80wd4x1plks480000gn/T/nvim.owen.harper-jones/lj3gp2/nvim.95940.0
+WRN 2026-03-18T11:51:02.474 ?.95941    server_start:199: Failed to start server: operation not permitted: /var/folders/0m/rz0c98v17ps80wd4x1plks480000gn/T/nvim.owen.harper-jones/4YPlBh/nvim.95941.0
+WRN 2026-03-18T11:51:02.567 ?.95941    server_start:199: Failed to start server: operation not permitted: /var/folders/0m/rz0c98v17ps80wd4x1plks480000gn/T/nvim.owen.harper-jones/4YPlBh/fzf-lua.1773831062.95941.1
+WRN 2026-03-18T11:51:02.658 ?.95940    server_start:199: Failed to start server: operation not permitted: /var/folders/0m/rz0c98v17ps80wd4x1plks480000gn/T/nvim.owen.harper-jones/lj3gp2/fzf-lua.1773831062.95940.1
