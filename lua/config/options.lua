@@ -7,3 +7,4 @@ vim.opt.splitbelow = true
 vim.opt.updatetime = 250
 vim.opt.timeoutlen = 400
 vim.opt.clipboard = "unnamedplus"
+vim.opt.autoread = true

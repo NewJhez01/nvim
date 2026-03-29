@@ -1,6 +1,5 @@
 local group = vim.api.nvim_create_augroup("UserStartup", { clear = true })
 
--- Open netrw on startup when no file/dir was passed on the CLI.
 vim.api.nvim_create_autocmd("VimEnter", {
   group = group,
   callback = function()
@@ -8,4 +7,12 @@ vim.api.nvim_create_autocmd("VimEnter", {
       vim.cmd.Ex()
     end
   end,
+})
+
+local autoread_group = vim.api.nvim_create_augroup("UserAutoRead", { clear = true })
+
+vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold" }, {
+  group = autoread_group,
+  pattern = "*",
+  command = "checktime",
 })
