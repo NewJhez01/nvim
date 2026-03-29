@@ -43,10 +43,12 @@ return {
 
           map("n", "K", vim.lsp.buf.hover, "LSP hover")
           map("n", "gD", vim.lsp.buf.declaration, "LSP declaration")
+          map("n", "gd", "<cmd>FzfLua lsp_definitions<CR>", "Goto definition (FZF)")
+          map("n", "gr", "<cmd>FzfLua lsp_references<CR>", "Goto references (FZF)")
           map("n", "gi", vim.lsp.buf.implementation, "LSP implementation")
           map("n", "<leader>cd", vim.diagnostic.open_float, "Line diagnostics")
           map("n", "<leader>cr", vim.lsp.buf.rename, "LSP rename")
-          map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, "LSP code action")
+          map({ "n", "v" }, "<leader>ca", "<cmd>FzfLua lsp_code_actions<CR>", "Code actions (FZF)")
 
           if client and client:supports_method(vim.lsp.protocol.Methods.textDocument_documentHighlight) then
             local group = vim.api.nvim_create_augroup("UserLspDocumentHighlight", { clear = false })

@@ -32,8 +32,7 @@ end, { desc = "Git history (current line)" })
 map("n", "<leader>bd", "<cmd>bdelete<CR>", { desc = "Delete buffer" })
 map("n", "<leader>bD", "<cmd>bdelete!<CR>", { desc = "Delete buffer (force)" })
 
--- LSP
-map("n", "gd", "<cmd>FzfLua lsp_definitions<CR>", { desc = "Goto definition (FZF)" })
-map("n", "gr", "<cmd>FzfLua lsp_references<CR>", { desc = "Goto references (FZF)" })
-map("n", "<leader>ca", "<cmd>FzfLua lsp_code_actions<CR>", { desc = "Code actions (FZF)" })
-map("n", "<leader>cr", vim.lsp.buf.rename, { desc = "LSP rename" })
+-- Markdown
+map("n", "<leader>m", function()
+	require("render-markdown").toggle()
+end, { desc = "Toggle Markdown render" })
